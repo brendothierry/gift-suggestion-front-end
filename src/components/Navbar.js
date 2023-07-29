@@ -3,6 +3,7 @@ import logo from '../Images/logo.svg';
 import { MenuData } from "./MenuData";
 import "../css/NavbarStyles.css";
 
+
 class Navbar extends Component {
     state= {clicked: false};
     handleClick =()=>{

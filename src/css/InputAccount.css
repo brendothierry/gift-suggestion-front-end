@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+  }
+
+.campo-em-branco input[type="campo"]{
+  width: 328px;
+  height: 65px;
+  top: 237px;
+  left: 347px;
+  border: 0px solid #ccc;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+}
+
+.campo-em-branco input[type="campo"] {
+  background-position: 10px center; 
+  background-color:  #F0EDFF; 
+  color: #333;  
+}
+
+.campo-em-branco input[type="campo"]:focus{
+  border-color: #00a0d2; 
+}
+
+.campo-em-branco input[type="campo"]::placeholder {
+  color: #9181F4;
+}
