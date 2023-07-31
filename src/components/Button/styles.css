@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+  }
+   
+  .button-login {
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Estilos do botão */
+  .Login {
+    width: 124px; /* Largura do botão */
+    height: 52px; /* Altura do botão */
+    padding: 0; /* Removendo qualquer padding interno */
+    font-size: 16px;
+    border: none;
+    border-radius: 16px; /* Raio da borda */
+    outline: none;
+    background: linear-gradient(to right, #9181F4, #5038ED);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Estilos do botão quando passa o mouse */
+  .Login:hover {
+    background: linear-gradient(to right, #5038ED, #9181F4);
+  }
+  
