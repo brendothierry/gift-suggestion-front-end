@@ -5,7 +5,7 @@
     height: 100vh; 
   }
    
-  .buttonlogin {
+  .button-login {
     text-align: center;
     position: relative;
   }
@@ -22,8 +22,6 @@
     background: linear-gradient(to right, #9181F4, #5038ED);
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s;
-    position: absolute;   
   }
   
   /* Estilos do botão quando passa o mouse */
