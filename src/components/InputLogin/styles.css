@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+  }
+
+.login input[type="email"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 0px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+}
+
+.login input[type="email"] {
+  background-image: url('../../Images/iconUser.svg');
+  background-position: 10px center; 
+  background-color:  #F0EDFF; 
+  color: #333; 
+}
+
+.login input[type="password"] {
+  background-image: url('../../Images/iconPass.svg');
+  background-position: 6px center; 
+  background-color:  #F0EDFF; 
+  color: #333; 
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #00a0d2; 
+}
