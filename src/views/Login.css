@@ -1,0 +1,47 @@
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.login {
+  display: flex;
+  font-family: 'Popins';
+}
+.forgot-password{
+  color: #9181F4;
+  cursor: pointer;
+  
+}
+.image-logo{
+  background-image: url("../Images/logo.svg"); /* Substitua pelo caminho correto da imagem de fundo */
+  width: 341px;
+  height: 92px;
+  top: 323px;
+  left: 155px;
+  flex-shrink: 0;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form-content {
+  text-align: center;
+}
+
+.image-teste {
+  flex: 1;
+  background-image: url("../Images/image.png");
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(113, 91, 241);
+  height: 100vh; 
+}
