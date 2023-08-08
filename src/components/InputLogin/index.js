@@ -11,8 +11,8 @@ class InputLogin extends React.Component {
     render() {
         return (
             <div className="container"> 
-                <div title="login">
-                    <div className="login">
+                <div title="Inputlogin">
+                    <div className="Inputlogin">
                         <div label="Email: * " htmlFor="exempleInputEmail1">
                             <input 
                                 type="email"

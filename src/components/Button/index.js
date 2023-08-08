@@ -9,8 +9,9 @@ import "./styles.css"
              <div className = "container" >
                 
                  <div className = "button-login">
+                 
 
-                 <button onClick={this.login} className="Login">Login Now</button>
+                 <button onClick={this.login} className="Login">Login</button>
 
                  </div>
 

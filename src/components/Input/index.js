@@ -5,7 +5,7 @@ import "./styles.css"
 class Input extends React.Component {
     
     state = {
-        campo: '',
+        campo: ''
     }
 
     render() {
