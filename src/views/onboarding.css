@@ -1,0 +1,61 @@
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onboarding {
+  display: flex;
+  flex-wrap: wrap; /* Fazer as divs quebrarem em uma nova linha */
+  width: 100%;
+  justify-content: center;
+}
+
+.lista {
+  margin-bottom: 15px; /* Espaçamento entre as divs */
+}
+
+/* Dividir o espaço em duas colunas */
+.column {
+  padding: 30px; /* Espaçamento entre as colunas */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhar os itens à esquerda */
+  margin-left: 5px;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  font-size: 60px;
+  font-weight: 1000;
+}
+
+.button-login{
+  text-align: center;
+  width: 100%;
+  font-size: 60px;
+  margin-top: 40px;
+}
+
+.container-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* Adiciona uma barra de rolagem vertical sempre, evitando que o conteúdo seja sobreposto */
+}
+
+
+
+
+
