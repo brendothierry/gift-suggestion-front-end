@@ -1,0 +1,52 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: -220px;
+    top: 49px;
+}
+
+.container-img-sec{
+    position: relative;
+    top: -250px;
+    margin-left: 50%;
+}
+
+.logo-gift{
+    height: 300px;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.logo-gift-personalizado{
+    height: 300px;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.logo-plus-first{
+    height: 200px;
+    top: 100px;
+    opacity: 0.5;
+    position: absolute;
+    transition: opacity 0.8s ease;
+    cursor: pointer;
+}
+.logo-plus-sec{
+    height: 200px;
+    top: 100px;
+    opacity: 0.5;
+    position: absolute;
+    transition: opacity 0.8s ease;
+    cursor: pointer;
+    left: 50px;
+}
+.logo-plus-first:hover,
+.logo-plus-sec:hover {
+  opacity: 1;
+}
