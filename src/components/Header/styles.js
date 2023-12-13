@@ -30,19 +30,4 @@ export const Container = styled.div`
         cursor: pointer;
         margin-top 3px;
     }
-    .container-notification{
-        margin-top: 30px;
-        margin-right: 30px;
-    }
-    .notification{
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-        opacity: 1;
-    }
-    .notification:hover{
-        opacity: 0.5;
-    }
-    .active{
-        color: white;
-    }
 `;
