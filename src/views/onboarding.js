@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Header from "../components/Header";
-import './onboarding.css'
+import './Onboarding.css'
 
 
 const Onboarding = () => {
@@ -24,7 +24,7 @@ const Onboarding = () => {
 
               <div className="lista">
                 <p>Email</p>
-                <Input placeholder="Coloque aqui seu Email" />
+                <Input placeholder="Email" />
               </div>
 
               <div className="lista">
@@ -39,7 +39,7 @@ const Onboarding = () => {
 
               <div className="lista">
                 <p>Senha</p>
-                <Input placeholder="Sua Senha" />
+                <Input placeholder="Senha" />
               </div>
             </div>
 
@@ -61,13 +61,13 @@ const Onboarding = () => {
 
               <div className="lista">
                 <p>Confirmar Senha</p>
-                <Input placeholder="Coloque sua Senha novamente" />
+                <Input placeholder="Repetir senha" />
               </div>
 
             </div>
 
-            <div className="button-login"> {/* Div para o botão */}
-              <Button label="Salvar Dados" />
+            <div className="button-login"> {/* Div para o botï¿½o */}
+              <Button label="Salvar dados" />
             </div>
 
           </div>

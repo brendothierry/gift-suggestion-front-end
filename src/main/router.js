@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Home from '../views/home'
+import Home from '../views/Home'
 
 import { Route, Routes, HashRouter } from 'react-router-dom'
 import Login from '../views/Login';
