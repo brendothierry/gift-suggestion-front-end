@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import giftFirst from '../Images/giftFirst.svg';
 import giftPersonalizado from '../Images/giftPersonalizado.svg'
 import logoPlus from '../Images/logoPlus.svg'
-import './home.css';
+import './Home.css';
 
 class Home extends React.Component {
 
