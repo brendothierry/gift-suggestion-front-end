@@ -1,12 +1,13 @@
-.container {
-  height: 90px;
-  display: flex;
-  max-height: 15vh;
-  min-height: 5vh;
-  background-color: #FFFFFF;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+
 }
 
-.logo-container {
+nav {
+
   display: flex;
   flex: 1;
   min-height: 5vh;
@@ -18,10 +19,21 @@
 
 }
 
-.logo-navbar {
-  cursor: pointer;  
+.line {
+  float: right;
+  width: 100%;
+  height: 3.8px;
+  margin-bottom: 20px;
+}
+.logo img {
+  cursor: pointer;
   min-height: 8vh;
   height: 70px;
   max-height: 8vh;
   max-width: 40vh;
+  height: 100px;
+  
+  
+  
+
 }

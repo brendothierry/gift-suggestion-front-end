@@ -1,15 +1,23 @@
 import React from 'react';
-import './styles.css'; // Importe o arquivo CSS que contém os estilos
-import logo from '../../Images/logo.svg';
+import LogoImagem from '../../Images/logo.png'
+import './styles.css';
 
-const Navbar = () => {
+class Navbar extends React.Component {
+  render() {
     return (
-      <div className="container">
-        <div className="logo-container">
-          <img className="logo-navbar" src={logo} alt="Logo" />
+      <nav>
+        <div className='line'>
+          <div className='logo'>
+            <img
+              src={LogoImagem}
+              alt='logo'
+              href='<home></home>'
+            />
+          </div>
         </div>
-      </div>
+      </nav>
     );
-  };
-  
-  export default Navbar;
+  }
+}
+
+export default Navbar;
