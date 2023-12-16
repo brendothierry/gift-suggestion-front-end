@@ -1,0 +1,48 @@
+body {
+    min-height: 80vh;
+    margin: 0;
+}
+
+.gs-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: #eef1f3;
+}
+
+.gs-container {
+    width: 90vw;
+}
+
+.gs-content {
+    text-align: center;
+}
+
+.logo-home{
+    display: block;
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu container */
+    height: auto;
+    width: 16%;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+}
+
+.animated-text {
+    font-family: 'Montserrat';
+    font-size: 1.5vw;
+    text-align: center;
+    color: #464646;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+.gs-button{
+    height: 200px;
+    width: 100%; 
+    margin-bottom: 5vh;
+}
+  
+@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');

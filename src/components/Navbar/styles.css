@@ -1,0 +1,27 @@
+.container {
+  height: 90px;
+  display: flex;
+  max-height: 15vh;
+  min-height: 5vh;
+  background-color: #FFFFFF;
+}
+
+.logo-container {
+  display: flex;
+  flex: 1;
+  min-height: 5vh;
+  height: 8vh;
+  max-height: 10vh;
+  min-width: 10vh;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px rgba(96, 0, 255, 0.7);
+
+}
+
+.logo-navbar {
+  cursor: pointer;  
+  min-height: 8vh;
+  height: 70px;
+  max-height: 8vh;
+  max-width: 40vh;
+}
