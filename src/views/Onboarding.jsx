@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import './Onboarding.css'
 
 
@@ -10,7 +10,7 @@ const Onboarding = () => {
     <div classname="container-header">
       <div classname="container-header">
         <div classname="Header">
-          <Header showSidebar={false}/>
+          <Navbar showSidebar={false}/>
         </div>
 
         <div className="container">

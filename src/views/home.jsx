@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/Header';
+import Header from '../components/Navbar';
 import giftFirst from '../Images/giftFirst.svg';
 import giftPersonalizado from '../Images/giftPersonalizado.svg'
 import logoPlus from '../Images/logoPlus.svg'

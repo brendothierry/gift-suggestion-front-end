@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import MainRoute from './router';
 import Home from '../views/Home';
-import Header from '../components/Header';
+import Header from '../components/Navbar';
 import Login from '../views/Login';
 import Onboarding from '../views/Onboarding';
 import GiftSuggestion from '../views/GiftSuggestion';

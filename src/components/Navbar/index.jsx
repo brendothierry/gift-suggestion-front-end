@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css'; // Importe o arquivo CSS que contém os estilos
 import logo from '../../Images/logo.svg';
 
-const Header = () => {
+const Navbar = () => {
     return (
       <div className="container">
         <div className="logo-container">
@@ -12,4 +12,4 @@ const Header = () => {
     );
   };
   
-  export default Header;
+  export default Navbar;

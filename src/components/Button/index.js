@@ -4,12 +4,12 @@ import "./styles.css"
     class Button extends React.Component{
         
         render() {
-            const { label } = this.props; // Obtém a propriedade label do componente pai
+            const { label } = this.props; // Obtï¿½m a propriedade label do componente pai
             return (
               <div className="container">
                 <div className="button-login">
-                  <button type="button" onClick={this.login} className="Login">
-                    {label} {/* Usa a propriedade label para definir o texto do botão */}
+                  <button type="button" className="Login">
+                    {label} {/* Usa a propriedade label para definir o texto do botï¿½o */}
                   </button>
                 </div>
               </div>
