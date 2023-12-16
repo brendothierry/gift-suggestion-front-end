@@ -4,9 +4,17 @@ import './GiftSuggestion.css';
 import AppContainer from '../components/GiftSuggestionModel';
 import image from '../Images/image.svg'
 import Button from '../components/Button';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const GiftSuggestion = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/login')
+    }
+
     return (
         <div className="gs-header">
             <Navbar></Navbar>
@@ -20,7 +28,7 @@ const GiftSuggestion = () => {
                                 <br></br>
                                 AQUI ESTÃO ALGUNS PONTOS-CHAVE PARA VOCÊ PENSAR AO ESCOLHER UM PRESENTE PARA ALGUÉM:
                             </div>
-                                <Button className="gs-button" label="Vamos lá!"></Button>
+                                <Button onClick={handleClick} className="gs-button" label="Vamos lá!" ></Button>
                         </div>
                     </AppContainer>
                 </div>
