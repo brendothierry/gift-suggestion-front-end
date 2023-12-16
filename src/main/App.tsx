@@ -1,20 +1,26 @@
 import React from 'react'
-import './App.css';
-import MainRoute from './router';
-import Home from '../views/Home';
-import Header from '../components/Navbar';
+import Home from '../views/Home'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom'
 import Login from '../views/Login';
-import Onboarding from '../views/Onboarding';
 import GiftSuggestion from '../views/GiftSuggestion';
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <div className="App">
-        <GiftSuggestion></GiftSuggestion>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+        </Route>
+        <Route path="/gs-home" element={<GiftSuggestion />}>
+        </Route>
+        <Route path="/login" element={<Login />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
+
 export default App;
