@@ -1,19 +1,15 @@
-import { useState } from 'react'
-import { Container } from './styles'
-import { FaBars } from 'react-icons/fa'
-import Sidebar from '../Sidebar'
+import React from 'react';
+import './styles.css'; // Importe o arquivo CSS que contém os estilos
 import logo from '../../Images/logo.svg';
-import notification from '../../Images/notification.svg'
-import notificationOn from '../../Images/notificationOn.svg'
 
 const Header = () => {
     return (
-        <Container>
-            <div className="logo-container">
-                <img className="logo-navbar" src={logo} />
-            </div>
-        </Container>
-    )
-}
-
-export default Header;
+      <div className="container">
+        <div className="logo-container">
+          <img className="logo-navbar" src={logo} alt="Logo" />
+        </div>
+      </div>
+    );
+  };
+  
+  export default Header;

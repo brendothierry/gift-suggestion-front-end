@@ -8,7 +8,7 @@ class Input extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className={`container ${this.props.className}`}>
         <div title="input">
           <div className="input">
             <div label="Campo: * ">

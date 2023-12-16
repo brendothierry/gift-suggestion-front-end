@@ -5,13 +5,14 @@ import Home from '../views/Home';
 import Header from '../components/Header';
 import Login from '../views/Login';
 import Onboarding from '../views/Onboarding';
+import GiftSuggestion from '../views/GiftSuggestion';
 
 class App extends React.Component {
 
   render() {
     return (
       <div className="App">
-        <Onboarding></Onboarding>
+        <GiftSuggestion></GiftSuggestion>
       </div>
     )
   }

@@ -1,0 +1,17 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  /* Ajuste a altura conforme necessário */
+  width: 75vw;
+  /* Ajuste a largura conforme necessário */
+  background-color: #ffffff;
+  /* Cor de fundo clara */
+  border: 3px solid #dad8da;
+  /* Borda do quadrado */
+  box-sizing: border-box;
+  margin: auto; /* Centraliza o quadrado na tela */
+  margin-top: 2%;
+  border-radius: 1%;
+}

@@ -14,7 +14,11 @@
 
 .Login {
   width: 124px;
+  max-width: 20vh;
+  min-width: 5vw;
   height: 52px;
+  max-height: 10vh;
+  min-height: 5vh;
   padding: 0;
   font-size: 16px;
   border: none;
@@ -23,6 +27,9 @@
   background: linear-gradient(to right, #9181F4, #5038ED);
   color: #fff;
   cursor: pointer;
+  white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+  overflow: hidden; /* Oculta o texto que ultrapassa os limites do botão */
+  text-overflow: ellipsis; /* Adiciona reticências (...) para indicar que o texto foi cortado */
 }
 
 .Login:hover {
