@@ -1,13 +1,13 @@
 import React from 'react';
 import './ForgotPassworld.css';
-import Header from "../components/Header";
+import Navbar from '../components/Navbar';
 
 class ForgotPassworld extends React.Component {
     render() {
         return (
         
             <div className="container-header">
-                <Header></Header>
+                <Navbar/>
                 <div className="container">
                     <div className="containerPage">
                         <div className="email">

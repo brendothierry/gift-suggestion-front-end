@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<Login />}>
         </Route>
         <Route path="/gs-home" element={<GiftSuggestion />}>
         </Route>
