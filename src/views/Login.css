@@ -1,47 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 body {
-  background-color: #ffffff;
   min-height: 100vh;
   margin: 0;
-}
-
-.login {
-  display: flex;
   font-family: 'Poppins';
 }
-.forgot-password{
-  color: #9181F4;
-  cursor: pointer;
-  
-}
-.image-logo{
-  background-image: url("../Images/logo.svg"); /* Substitua pelo caminho correto da imagem de fundo */
-  width: 341px;
-  height: 92px;
-  top: 323px;
-  left: 155px;
-  flex-shrink: 0;
-  margin-bottom: 100px;
-  margin-top: 50px;
-  
+
+.container {
 }
 
-.form-container {
+.background-image {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../Images/img-background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
+  z-index: -1;
+}
+
+/*.form-container {
+  position: relative;
+  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+}*/
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  width: 25vw;
+  background-color: #ffffff;
+  border: 3px solid #e6e6e6;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 2%;
+  border-radius: 1%;
+  opacity: 1;
 }
 
-.form-content {
-  text-align: center;
+.forgot-password {
+  color: #9181F4;
 }
 
-.image-teste {
-  flex: 1;
-  background-image: url("../Images/image.png");
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(113, 91, 241);
-  height: 100vh; 
+.image-logo {
+  background-image: url("../Images/logo.svg");
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  width: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

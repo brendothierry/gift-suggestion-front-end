@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import './GiftSuggestion.css';
 import AppContainer from '../components/GiftSuggestionModel';
-import image from '../Images/image.svg'
+import image from '../Images/img-background.svg'
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Header from "../components/Header";
 import './ResetPassword.css';
+import Navbar from '../components/Navbar';
 
 const ResetPassword = () => {
     const [newPassword, setNewPassword] = useState('');
@@ -19,7 +19,7 @@ const ResetPassword = () => {
 
     return (
         <div className="header">
-            <Header />
+            <Navbar />
             <div className="container">
                 <div className="containerPage">
                     <h2 className="container-header">Redefinir Senha</h2>
