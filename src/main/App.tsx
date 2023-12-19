@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom'
 import Login from '../views/Login';
 import GiftSuggestion from '../views/GiftSuggestion';
+import ForgotPassword from '../views/ForgotPassword';
+import ResetPassword from '../views/ResetPassword';
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         </Route>
         <Route path="/gs-home" element={<GiftSuggestion />}>
         </Route>
-        <Route path="/login" element={<Login />}>
+        <Route path="/forgot-password" element={<ForgotPassword/>}>
         </Route>
       </Routes>
     </BrowserRouter>
