@@ -28,6 +28,8 @@ const Login = () => {
                 <br></br>
                 <Link to="/forgot-password" className="forgot-password">Esqueceu sua senha?</Link>
                 <Button label="Entrar" onClick={handleClick} />
+
+                
             </div>
         </div>
     );
