@@ -2,6 +2,7 @@
 import React from 'react';
 import LogoImagem from '../../Images/logo.png';
 import './styles.css';
+import IconUser from '../../Images/IconUser.svg'
 
 class Navbar extends React.Component {
   render() {
@@ -16,7 +17,15 @@ class Navbar extends React.Component {
           </div>
 
           {showButton && (
-            <button className='navbar-button'> Criar Sugestão de Presente </button>
+            <button className='sugestao'> Criar Sugestão de Presente </button>
+          )}
+           {showButton && (
+            <button className='sobre-nos'> Sobre nós </button>
+          )}
+          {showButton && (
+            <button className='icone'>
+              <img src={IconUser} alt='icone' />
+            </button>
           )}
          
         </div>

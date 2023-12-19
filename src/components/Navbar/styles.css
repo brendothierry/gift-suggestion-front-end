@@ -3,11 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  overflow: hidden;
+}
 
 nav {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   height: 8vh;
   background-color: #FFFFFF;
   box-shadow: 0 3px rgba(96, 0, 255, 0.7);
@@ -20,35 +23,72 @@ nav {
   align-items: center;
   width: 100%;
   padding: 20px;
-  
+
 }
 
 .logo img {
   cursor: pointer;
   min-height: 8vh;
-  height: 70px;
-  max-height: 8vh;
-  max-width: 40vh;
+  max-height: 8.5vh;
   height: 100px;
-  
-  
+
+
 }
 
-.navbar-button {
-  margin-top: 10px; 
+.sugestao {
+  margin-top: 10px;
   padding: 15px 24px;
-  background-color:rgba(96, 0, 255, 0.7);
-  color:#FFFFFF;
+  background-color: rgba(96, 0, 255, 0.7);
+  color: #FFFFFF;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   font-size: 14px;
   margin-left: auto;
-  margin-right: auto;
-  
-  
+  margin-right: 15px;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+
 }
 
 .navbar-button:hover {
   background-color: #2980b9;
+}
+
+.sobre-nos {
+  margin-top: 10px;
+  padding: 15px 24px;
+  background-color: rgba(96, 0, 255, 0.7);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 40px;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.icone {
+  margin-top: 10px;
+  padding: 15px 24px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.icone:hover {
+  transform: scale(1.5);
+}
+
+.sobre-nos:hover {
+  transform: scale(1.2);
+}
+.sugestao:hover{
+  transform: scale(1.2);
 }
