@@ -1,0 +1,64 @@
+import React, { useState } from 'react';
+import './ResetPassword.css';
+import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
+
+const ResetPassword = () => {
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
+
+    const handleResetPassword = () => {
+       
+        if (newPassword !== confirmPassword) {
+            setError('As senhas não coincidem.');
+        } else {
+
+            setError('');
+        }
+    };
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/login')
+    }
+
+    return (
+        <div className="header">
+            <Navbar />
+            <div className="container-rp">
+                <div className="containerPage">
+                    <h2 className="container-header">Redefinir Senha</h2>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                    <br></br>
+                    <label htmlFor="newPassword">Nova Senha:</label>
+                    <input
+                        type="password"
+                        id="newPassword"
+                        name="newPassword"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                        className="email-input"
+                        required
+                    />
+                    <label htmlFor="confirmPassword">Confirmar Senha:</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="email-input"
+                        required
+                    />
+                    <button className="email-button" onClick={handleClick}>
+                        Redefinir Senha
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ResetPassword;
