@@ -7,7 +7,7 @@ class Button extends React.Component {
     const { label } = this.props;
     const { onClick, children } = this.props; // Obt�m a propriedade label do componente pai
     return (
-      <div className="container">
+      <div className="container-button">
         <div className="button-login">
           <button type="button" className="Login" onClick={onClick}>
             {label} {children} {/* Usa a propriedade label para definir o texto do bot�o */}

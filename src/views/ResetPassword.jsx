@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ResetPassword.css';
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
     const [newPassword, setNewPassword] = useState('');
@@ -17,10 +18,16 @@ const ResetPassword = () => {
         }
     };
 
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/login')
+    }
+
     return (
         <div className="header">
             <Navbar />
-            <div className="container">
+            <div className="container-rp">
                 <div className="containerPage">
                     <h2 className="container-header">Redefinir Senha</h2>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -45,7 +52,7 @@ const ResetPassword = () => {
                         className="email-input"
                         required
                     />
-                    <button className="email-button" onClick={handleResetPassword}>
+                    <button className="email-button" onClick={handleClick}>
                         Redefinir Senha
                     </button>
                 </div>
