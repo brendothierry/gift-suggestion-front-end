@@ -1,18 +1,15 @@
-body {
-    min-height: 80vh;
-    margin: 0;
-}
-
 .gs-page {
-    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
-    background-color: #eef1f3;
+    max-height: 80vh;
+}
+.gs-header{
 }
 
 .gs-container {
-    width: 90vw;
+    height: 100vh;
+    max-height: 80vh;
+
 }
 
 .gs-content {
@@ -21,28 +18,41 @@ body {
 
 .logo-home{
     display: block;
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu container */
-    height: auto;
+    max-width: 100%;
     width: 16%;
     margin: 0 auto;
-    margin-bottom: 5vh;
+    margin-top: -10vh;
+    margin-bottom: 10vh;
 }
 
-.animated-text {
-    font-family: 'Montserrat';
+.text-m1 {
+    font-family: 'Yeseva One';
     font-size: 1.5vw;
     text-align: center;
-    color: #464646;
+    color: #2E1042;
     margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
+    font-weight: 700;
   }
 
+.text-m2{
+    font-family: 'Glacial Indifference';
+    font-size: 1.2vw;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 4vh;
+}
+
+.text-m3{
+    font-family: 'Yeseva One';
+    font-size: 1.2vw;
+    text-align: center;
+    color: #2E1042;
+    margin-bottom: 2vh;
+    font-weight: 600;
+}
+
 .gs-button{
-    height: 200px;
-    width: 100%; 
-    margin-bottom: 5vh;
+    margin: 0 auto;
 }
   
-@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');

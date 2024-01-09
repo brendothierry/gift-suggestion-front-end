@@ -9,12 +9,13 @@ import GiftSuggestion from '../views/GiftSuggestion';
 import ForgotPassword from '../views/ForgotPassword';
 import ResetPassword from '../views/ResetPassword';
 import Onboarding from '../views/Onboarding';
+import Home from '../views/Home';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<GiftSuggestion />}>
         </Route>
         <Route path="/login" element={<Login />}>
         </Route>
