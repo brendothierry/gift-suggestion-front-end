@@ -9,7 +9,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/gs-home')
+        navigate('/home')
     }
     return (
         <div className="container">

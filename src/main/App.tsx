@@ -10,12 +10,13 @@ import ForgotPassword from '../views/ForgotPassword';
 import ResetPassword from '../views/ResetPassword';
 import Onboarding from '../views/Onboarding';
 import Home from '../views/Home';
+import AboutUs from '../views/AboutUs';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<GiftSuggestion />}>
+        <Route path="/" element={<Home />}>
         </Route>
         <Route path="/login" element={<Login />}>
         </Route>
@@ -26,6 +27,10 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />}>
         </Route>
         <Route path="/reset-password" element={<ResetPassword />}>
+        </Route>
+        <Route path="/home" element={<Home />}>
+        </Route>
+        <Route path="/about-us" element={<AboutUs />}>
         </Route>
       </Routes>
     </BrowserRouter>

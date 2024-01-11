@@ -1,52 +1,64 @@
+
 .container {
-    height: 100%;
+    background-size: cover;
+    background-position: center; 
+  }
+  
+.container img {
+    height: auto; 
     width: 100%;
+    
 }
-
-.container-img{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    left: -220px;
-    top: 49px;
-}
-
-.container-img-sec{
-    position: relative;
-    top: -250px;
-    margin-left: 50%;
-}
-
-.logo-gift{
-    height: 300px;
+.gift {
+    margin-top: 10px; 
+    padding: 10px 20px;
+    background-color: white;
+    color:black;
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
-    opacity: 0.4;
+    font-size: 14px;
+    margin-left: 90px;
+   
+}
+.gift:hover {
+    background-color: #f0f0f0; 
 }
 
-.logo-gift-personalizado{
-    height: 300px;
-    cursor: pointer;
-    opacity: 0.4;
-}
-
-.logo-plus-first{
-    height: 200px;
-    top: 100px;
-    opacity: 0.5;
+.texto {
+    font-size: 28px;
     position: absolute;
-    transition: opacity 0.8s ease;
-    cursor: pointer;
+    top: 50%;
+    left: 10%;
+    right: 66%; 
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 40%;
+    color: #fff;
 }
-.logo-plus-sec{
-    height: 200px;
-    top: 100px;
-    opacity: 0.5;
-    position: absolute;
-    transition: opacity 0.8s ease;
-    cursor: pointer;
-    left: 50px;
+
+.titulo {
+    margin-bottom: 20px;
+    color: rebeccapurple;
 }
-.logo-plus-first:hover,
-.logo-plus-sec:hover {
-  opacity: 1;
+
+.texto-home {
+    text-align: left;
+    font-style: italic;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .texto {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        text-align: left;
+        max-width: none;
+        
+    }
 }
