@@ -27,7 +27,6 @@ class Navbar extends React.Component {
               <img src={IconUser} alt='icone' />
             </button>
           )}
-         
         </div>
       </nav>
     );

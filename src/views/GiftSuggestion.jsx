@@ -6,6 +6,7 @@ import image from '../Images/image.svg'
 import Button from '../components/Button';
 import { useHistory } from 'react-router-dom';
 
+
 const GiftSuggestion = () => {
     return (
         <div className="gs-header">

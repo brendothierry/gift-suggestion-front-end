@@ -1,6 +1,6 @@
 import React from 'react';
-import home from '../Images/home.png';
-import lupaIcon from '../Images/lupa.png';
+import home from '../Images/home1.png';
+import lupaIcon from '../Images/lupa-home.png';
 import Navbar from '../components/Navbar';
 import './Home.css';
 
@@ -8,9 +8,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className='container'>
-        
         <Navbar showButton={true} />
-
+        
         <div className='texto'>
           <h1 className='titulo'> Presente Ideal ? </h1>
           <p className='texto-home'>
