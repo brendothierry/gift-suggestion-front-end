@@ -1,0 +1,74 @@
+
+.container-edit-profile {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .editprofile {
+    display: flex;
+    flex-wrap: wrap; /* Fazer as divs quebrarem em uma nova linha */
+    width: 35%;
+    border: 1px solid #000; /* Adiciona uma borda de 2 pixels sólidos de cor cinza claro */
+    border-radius: 10px; /* Adiciona cantos arredondados à borda */
+    padding: 35px; /* Adiciona algum espaçamento interno para evitar que o conteúdo encoste na borda */
+  }
+  
+  .lista {
+    margin-bottom: 15px; /* Espa�amento entre as divs */
+  }
+  
+  /* Dividir o espa�o em duas colunas */
+  .column {
+    padding: 30px; /* Espa�amento entre as colunas */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinhar os itens � esquerda */
+    margin-left: 5px;
+  }
+  
+  .title1 {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 60px;
+    font-weight: 1000;
+    width: 100%;
+  }
+  
+  .button-login{
+    text-align: center;
+    width: 100%;
+    font-size: 60px;
+    margin-top: 40px;
+  }
+  
+  .container-header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* Adiciona uma barra de rolagem vertical sempre, evitando que o conte�do seja sobreposto */
+  }
+  
+  .Header {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu container */
+    display: flex;
+    align-items: center;
+    background-color: #eef1f3;
+    margin-bottom: 5vh;
+  }
+  
+  
+  
+  
+  
