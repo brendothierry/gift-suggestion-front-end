@@ -1,8 +1,7 @@
 .Inputlogin input[type="email"],
-.Inputlogin input[type="password"] {
+.Inputlogin input[type="senha"] {
   width: 400px;
   height: 60px;
-  top: 237px;
   left: 347px;
   padding: 10px;
   font-size: 16px;
@@ -14,20 +13,18 @@
 }
 
 .Inputlogin input[type="email"] {
-  background-image: url('../../Images/IconUser.svg');
   background-position: 15px center; 
   background-color:  #F0EDFF; 
   color: #333; 
 }
 
-.Inputlogin input[type="password"] {
-  background-image: url('../../Images/IconPass.svg');
+.Inputlogin input[type="senha"] {
   background-position: 10px center; 
   background-color:  #F0EDFF; 
   color: #333; 
 }
 
 .Inputlogin input[type="email"]:focus,
-.Inputlogin input[type="password"]:focus {
+.Inputlogin input[type="senha"]:focus {
   border-color: #00a0d2; 
 }

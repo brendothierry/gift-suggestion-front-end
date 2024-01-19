@@ -1,4 +1,4 @@
-import React, { useState}from "react";
+import React from "react";
 import "./styles.css";
 
 const Input = ({ placeholder, type, name, value, onChange, className, ...restProps }) => {
