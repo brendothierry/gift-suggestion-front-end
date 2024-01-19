@@ -20,12 +20,11 @@ const Login = () => {
                 <div className="image-logo" />
                 <br></br>
                 <h1>LOGIN</h1>
-                <br></br>
                 <p>Seja bem-vindo </p>
                 <br></br>
                 <InputLogin />
                 <br></br>
-                <br></br>
+                <Link to="/onboarding" className="create-account">Crie sua conta!</Link>
                 <Link to="/forgot-password" className="forgot-password">Esqueceu sua senha?</Link>
                 <Button label="Entrar" onClick={handleClick} />
             </div>

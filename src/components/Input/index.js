@@ -1,27 +1,25 @@
-import React from "react";
+import React, { useState}from "react";
 import "./styles.css";
 
-class Input extends React.Component {
-  state = {
-    campo: "",
-  };
+const Input = ({ placeholder, type, name, value, onChange, className, ...restProps }) => {
 
-  render() {
     return (
-      <div className={`container ${this.props.className}`}>
         <div title="input">
           <div className="input">
             <div label="Campo: * ">
               <input
-                type="campo"
-                placeholder={this.props.placeholder} // Use o placeholder passado como prop
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+                className={`container ${className}`} // Adicionando a classe fornecida
+                {...restProps} // Mantendo e repassando as outras propriedades
               />
             </div>
           </div>
         </div>
-      </div>
     );
   }
-}
 
 export default Input;
