@@ -21,6 +21,11 @@ const Navbar = ({ showButton, onClick }) => {
     navigate('/about-us')
   }
 
+  const handleClickEditProfile = () => {
+    navigate('/edit-profile')
+  }
+
+
   return (
     <nav>
       <div className='line'>
@@ -36,7 +41,7 @@ const Navbar = ({ showButton, onClick }) => {
           <button className='sobre-nos' onClick={handleClickAboutUs}> Sobre nós </button>
         )}
         {showButton && (
-          <button className='icone'>
+          <button className='icone' onClick={handleClickEditProfile}>
             <img src={IconUser} alt='icone' />
           </button>
         )}

@@ -10,7 +10,8 @@
     display: flex;
     flex-wrap: wrap; /* Fazer as divs quebrarem em uma nova linha */
     width: 35%;
-    border: 1px solid #000; /* Adiciona uma borda de 2 pixels sólidos de cor cinza claro */
+    margin-top: 10px;
+    border: 1px solid #8f8f8f; /* Adiciona uma borda de 2 pixels sólidos de cor cinza claro */
     border-radius: 10px; /* Adiciona cantos arredondados à borda */
     padding: 35px; /* Adiciona algum espaçamento interno para evitar que o conteúdo encoste na borda */
   }
@@ -46,7 +47,7 @@
     margin-top: 40px;
   }
   
-  .container-header {
+  .container-profile {
     height: 100%;
     display: flex;
     align-items: center;

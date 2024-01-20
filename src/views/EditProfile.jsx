@@ -2,58 +2,76 @@ import React from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
-import './editprofile.css'
+import './Editprofile.css'
+import { useNavigate } from 'react-router-dom';
 
 
 const EditProfile = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/home')
+    }
+
     return (
-        <div classname="container-header">
-            <div classname="container-header">
-                <div className="Header">
-                    <Navbar showSidebar={false} />
-                </div>
+        <div classname="container-profile">
+            <Navbar showSidebar={false} />
 
-                <div className="container-edit-profile">
-                    <div className="editprofile">
+            <div className="container-edit-profile">
+                <div className="editprofile">
 
-                        <div className="title1">
-                            <p>Perfil</p>
-                        </div>
-
-                        <div className="lista">
-                        <p>Dados do Usuário</p>
-                            <Input placeholder="Novo Email" />
-                            <br></br>
-                        </div>                       
-
-                        <div className="lista">
-                            <Input placeholder="Senha Antiga" />
-                        </div>
-
-                        <div className="lista">
-                            <Input placeholder="Novo Telefone" />
-                        </div>
-
-                        <div className="lista">
-                            <p>Segurança</p>
-                            <Input placeholder="Nova Senha" />
-                            <br></br>
-                        </div>
-
-                        <div className="lista">
-                            <Input placeholder="Repetir Nova Senha" />
-                        </div>
-
+                    <div className="title">
+                        <p>Perfil</p>
                     </div>
-                </div>
 
-                <div className="button-login"> {/* Div para o bot�o */}
-                    <Button label="Salvar Dados" />
-                </div>
+                    <div className="lista">
+                        <p>Dados do Usuário</p>
+                        <br></br>
+                        <Input
+                            placeholder="Novo email"
+                            type="campo"
+                        />
+                    </div>
 
+                    <div className="lista">
+                        <Input
+                            placeholder="Novo Telefone"
+                            type="campo"
+                        />
+                    </div>
+
+                    <div className="lista">
+                        <p>Segurança</p>
+                        <br></br>
+                        <Input
+                            placeholder="Senha antiga"
+                            type="campo"
+                        />
+                    </div>
+                    <div className="lista">
+                        <Input
+                            placeholder="Nova Senha"
+                            type="campo"
+                        />
+                    </div>
+                    
+
+                    <div className="lista">
+                        <Input
+                            placeholder="Repetir Nova Senha"
+                            type="campo"
+                        />
+                    </div>
+
+                </div>
             </div>
-        </div>
 
+            <div className="button-login">
+                <Button label="Salvar Dados" onClick={handleClick} />
+            </div>
+
+        </div>
     );
 };
 

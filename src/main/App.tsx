@@ -11,6 +11,7 @@ import ResetPassword from '../views/ResetPassword';
 import Onboarding from '../views/Onboarding';
 import Home from '../views/Home';
 import AboutUs from '../views/AboutUs';
+import EditProfile from '../views/EditProfile';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
         <Route path="/home" element={<Home />}>
         </Route>
         <Route path="/about-us" element={<AboutUs />}>
+        </Route>
+        <Route path="/edit-profile" element={<EditProfile />}>
         </Route>
       </Routes>
     </BrowserRouter>
