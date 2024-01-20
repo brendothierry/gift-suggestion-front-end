@@ -66,7 +66,7 @@ nav {
   margin-left: auto;
   margin-right: 40px;
   transform: scale(1);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ;
 
 }
 
@@ -82,12 +82,12 @@ nav {
 }
 
 .icone:hover {
-  transform: scale(1.5);
+  transform: scale(1.01);
 }
 
 .sobre-nos:hover {
-  transform: scale(1.2);
+  transform: scale(1.01);
 }
 .sugestao:hover{
-  transform: scale(1.2);
+  transform: scale(1.01);
 }

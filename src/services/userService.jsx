@@ -7,7 +7,9 @@ const UpdateCliente = async (clienteData) => {
         const response = await axios.post(
             `http://localhost:8080/gift-suggestion/gs/create-cliente`, clienteData
         );
-        return response.data
+        if (response.status == 200) {
+            return response.data
+        }
     } catch (error) {
         throw error;
         console.error('Erro ao atualizar cliente:', error);
@@ -19,8 +21,8 @@ const Login = async (clienteData) => {
         const response = await axios.post(
             `http://localhost:8080/gift-suggestion/gs/login`, clienteData
         );
-        if(response.status == 200){
-        return response.data
+        if (response.status == 200) {
+            return response.data
         }
     } catch (error) {
         throw error;
