@@ -12,6 +12,9 @@ import Onboarding from '../views/Onboarding';
 import Home from '../views/Home';
 import AboutUs from '../views/AboutUs';
 import EditProfile from '../views/EditProfile';
+import GiftSuggestionScreen1 from '../views/GiftSuggestionScreen1';
+import GiftSuggestionScreen2 from '../views/GiftSuggestionScreen2';
+import GiftSuggestionScreen3 from '../views/GiftSuggestionScreen3';
 
 function App() {
   return (
@@ -34,6 +37,12 @@ function App() {
         <Route path="/about-us" element={<AboutUs />}>
         </Route>
         <Route path="/edit-profile" element={<EditProfile />}>
+        </Route>
+        <Route path="/screen1" element={<GiftSuggestionScreen1 />}>
+        </Route>
+        <Route path="/screen2" element={<GiftSuggestionScreen2 />}>
+        </Route>
+        <Route path="/screen3" element={<GiftSuggestionScreen3 />}>
         </Route>
       </Routes>
     </BrowserRouter>
