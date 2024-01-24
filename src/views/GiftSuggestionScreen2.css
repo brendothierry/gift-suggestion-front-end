@@ -80,6 +80,7 @@ body {
 .img-info1,
 .img-info2,
 .img-info3 {
+    border-radius: 42px 42px 0 0 ;
     width: 70%;
     height: auto;
 }
@@ -121,14 +122,21 @@ body {
 
 .button-container {
     display: flex;
-    justify-content: space-between;
     width: 90%;
     padding: 10px;
 }
 
-.button-back,
-.button-next {
-    margin-left: 10%;
+.button-back{
     padding: 10px;
     display: inline-block;
+    position: absolute;
+    left: 10px;  /* Ajuste conforme necessário */
+    top: 10vh;
+}
+.button-next {
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 10px;  /* Ajuste conforme necessário */
+    top: 10vh;
 }

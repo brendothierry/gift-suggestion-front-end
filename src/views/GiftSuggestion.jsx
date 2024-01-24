@@ -12,7 +12,7 @@ const GiftSuggestion = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/login')
+        navigate('/screen1')
     }
 
     return (

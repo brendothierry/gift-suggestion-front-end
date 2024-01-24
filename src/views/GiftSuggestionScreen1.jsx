@@ -15,7 +15,7 @@ const GiftSuggestionScreen1 = () => {
     const navigate = useNavigate();
 
     const handleClickBack = () => {
-        navigate('/login')
+        navigate('/gs-home')
     }
 
     const handleClickNext = () => {

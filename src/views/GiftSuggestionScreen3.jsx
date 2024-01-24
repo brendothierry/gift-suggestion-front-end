@@ -19,7 +19,7 @@ const GiftSuggestionScreen3 = () => {
     }
 
     const handleClickNext = () => {
-        navigate('/login')
+        navigate('/finish-screen')
     }
 
     const [clienteData, setClienteData] = useState({

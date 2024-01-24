@@ -15,6 +15,7 @@ import EditProfile from '../views/EditProfile';
 import GiftSuggestionScreen1 from '../views/GiftSuggestionScreen1';
 import GiftSuggestionScreen2 from '../views/GiftSuggestionScreen2';
 import GiftSuggestionScreen3 from '../views/GiftSuggestionScreen3';
+import GiftSuggestionFinishScreen from '../views/GiftSuggestionFinishScreen';
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
         <Route path="/screen2" element={<GiftSuggestionScreen2 />}>
         </Route>
         <Route path="/screen3" element={<GiftSuggestionScreen3 />}>
+        </Route>
+        <Route path="/finish-screen" element={<GiftSuggestionFinishScreen />}>
         </Route>
       </Routes>
     </BrowserRouter>
