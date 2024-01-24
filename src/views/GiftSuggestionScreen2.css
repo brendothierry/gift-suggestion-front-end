@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.container-header {}
+
+.container-gs-screen1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    margin-top: 2 0px;
+}
+
+.gs-screen1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    flex-direction: row;
+}
+
+.setInfo1,
+.setInfo2,
+.setInfo3 {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-container {
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    max-height: 120%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-style {
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    max-height: 20vh;
+    resize: none;
+    border: 0px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 15px;
+    padding-top: 8px;
+    background-color: #F0EDFF;
+    white-space: pre-wrap;
+    font-weight: 550;
+    font-family: 'Poppins';
+}
+
+.info-wrapper {
+    position: relative;
+    max-height: 100px;
+}
+
+.title-input {
+    position: absolute;
+    top: 50px;
+    max-width: 20vw;
+    font-size: 25px;
+}
+
+.img-info1,
+.img-info2,
+.img-info3 {
+    border-radius: 42px 42px 0 0 ;
+    width: 70%;
+    height: auto;
+}
+
+.info-icon1,
+.info-icon2,
+.info-icon3 {
+    cursor: pointer;
+    transform: translate(-20vh,-30vh);
+    width: 30px;
+    height: 100px;
+}
+
+.modal {
+    position: fixed;
+    left: 11.5%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-1vh, -18vw);
+    background-color: #fff;
+    opacity: 0.9;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close-button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.button-container {
+    display: flex;
+    width: 90%;
+    padding: 10px;
+}
+
+.button-back{
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    left: 10px;  /* Ajuste conforme necessário */
+    top: 10vh;
+}
+.button-next {
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 10px;  /* Ajuste conforme necessário */
+    top: 10vh;
+}

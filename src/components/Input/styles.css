@@ -5,7 +5,7 @@
     height: 100vh; 
   }
 
-.input input[type="campo"]{
+.input input{
   width: 328px;
   height: 55px;
   top: 237px;
@@ -15,18 +15,13 @@
   outline: none;
   padding-left: 15px;
   background-repeat: no-repeat;
-}
-
-.input input[type="campo"] {
   background-position: 10px center; 
   background-color:  #F0EDFF; 
   color: #333;  
+  white-space: pre-wrap; /* Permite a quebra de linha */
+
 }
 
-.input input[type="campo"]:focus{
-  border-color: #00a0d2; 
-}
-
-.input input[type="campo"]::placeholder {
+.input input::placeholder {
   color: #9181F4;
 }
