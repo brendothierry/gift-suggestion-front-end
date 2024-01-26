@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
@@ -19,40 +19,56 @@ const GiftSuggestionScreen1 = () => {
     }
 
     const handleClickNext = () => {
-        navigate('/screen2')
+        navigate('/screen2', { state: { clienteData } })
     }
 
-    const [clienteData, setClienteData] = useState({
-        info1: '',
-        info2: '',
-        info3: '',
-    });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setClienteData((prevData) => ({
-            ...prevData,
-            [name]: value,
+    const [modalsVisibility, setModalsVisibility] = useState({
+        modal1: false,
+        modal2: false,
+        modal3: false,
+    });
+    
+    const toggleModal = (modalName) => {
+        setModalsVisibility((prevVisibility) => ({
+            ...prevVisibility,
+            [modalName]: !prevVisibility[modalName],
         }));
     };
 
-    const [modal1Visible, setModal1Visible] = useState(false);
 
-    const toggleModal1 = () => {
-        setModal1Visible(!modal1Visible);
+    const [clienteData, setClienteData] = useState({
+        info0: 'Me dê 10 sugestões de presentes baseada nas seguintes características',
+        info1: '',
+        info2: '',
+        info3: '',
+        info4: '',
+        info5: '',
+        info6: '',
+        info7: '',
+        info8: '',
+        info9: ''
+    });
+
+    const handleChange = (event, fieldName) => {
+        const newValue = event.target.value;
+        setClienteData((prevData) => {
+            const newData = {
+                ...prevData,
+                [fieldName]: newValue,
+            };
+            localStorage.setItem('clienteData', JSON.stringify(newData));
+            return newData;
+        });
     };
 
-    const [modal2Visible, setModal2Visible] = useState(false);
+    useEffect(() => {
+        const savedData = localStorage.getItem('clienteData');
+        if (savedData) {
+            setClienteData(JSON.parse(savedData));
+        }
+    }, []);
 
-    const toggleModal2 = () => {
-        setModal2Visible(!modal2Visible);
-    };
-
-    const [modal3Visible, setModal3Visible] = useState(false);
-
-    const toggleModal3 = () => {
-        setModal3Visible(!modal3Visible);
-    };
 
     return (
         <div className="container-navbar">
@@ -66,13 +82,13 @@ const GiftSuggestionScreen1 = () => {
                                 <img
                                     src={info}
                                     className="info-icon1"
-                                    onClick={toggleModal1}
+                                    onClick={() => toggleModal('modal1')}
                                 />
-                                {modal1Visible && (
+                                {modalsVisibility.modal1 && (
                                     <div className="modal">
                                         <div className="modal-content">
                                             <p>Seu texto estático aqui</p>
-                                            <button onClick={toggleModal1} className="close-button">
+                                            <button onClick={() => toggleModal('modal1')} className="close-button">
                                                 Fechar
                                             </button>
                                         </div>
@@ -83,7 +99,8 @@ const GiftSuggestionScreen1 = () => {
                             <textarea
                                 className="input-style"
                                 type="campo"
-                                onChange={handleChange}
+                                onChange={(e) => handleChange(e, 'info1')}
+                                value={clienteData.info1}
                             />
                         </div>
                     </div>
@@ -96,23 +113,25 @@ const GiftSuggestionScreen1 = () => {
                                 <img
                                     src={info}
                                     className="info-icon2"
-                                    onClick={toggleModal2}
+                                    onClick={() => toggleModal('modal2')}
                                 />
-                                {modal2Visible && (
+                                {modalsVisibility.modal2 && (
                                     <div className="modal">
                                         <div className="modal-content">
                                             <p>Seu texto estático aqui</p>
-                                            <button onClick={toggleModal2} className="close-button">
+                                            <button onClick={() => toggleModal('modal2')} className="close-button">
                                                 Fechar
                                             </button>
                                         </div>
                                     </div>
                                 )}
                             </div>
-                            <p className="title-input">Hobbies</p>
+                            <p className="title-input">Interesses e Hobbies</p>
                             <textarea
                                 className="input-style"
-                                onChange={handleChange} />
+                                onChange={(e) => handleChange(e, 'info2')}
+                                value={clienteData.info2}
+                            />
                         </div>
                     </div>
 
@@ -124,13 +143,13 @@ const GiftSuggestionScreen1 = () => {
                                 <img
                                     src={info}
                                     className="info-icon3"
-                                    onClick={toggleModal3}
+                                    onClick={() => toggleModal('modal3')}
                                 />
-                                {modal3Visible && (
+                                {modalsVisibility.modal3 && (
                                     <div className="modal">
                                         <div className="modal-content">
                                             <p>Seu texto estático aqui</p>
-                                            <button onClick={toggleModal3} className="close-button">
+                                            <button onClick={() => toggleModal('modal3')} className="close-button">
                                                 Fechar
                                             </button>
                                         </div>
@@ -142,7 +161,9 @@ const GiftSuggestionScreen1 = () => {
                                 width={500}
                                 height={250}
                                 className="input-style"
-                                onChange={handleChange} />
+                                onChange={(e) => handleChange(e, 'info3')}
+                                value={clienteData.info3}
+                            />
                         </div>
                     </div>
                 </div>

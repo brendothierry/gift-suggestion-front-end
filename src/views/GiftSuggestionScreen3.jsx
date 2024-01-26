@@ -1,59 +1,94 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import './GiftSuggestionScreen1.css';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import infoModel7 from '../Images/gs-info-model7.svg';
 import infoModel8 from '../Images/gs-info-model8.svg';
 import infoModel9 from '../Images/gs-info-model9.svg';
 import info from '../Images/info-circle.svg';
+import userService from '../services/userService';
 
 
 const GiftSuggestionScreen3 = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const [responseFromChatGPT, setResponseFromChatGPT] = useState(null);
+
+
 
     const handleClickBack = () => {
-        navigate('/screen2')
+        navigate('/screen2', { state: { clienteData } })
     }
 
-    const handleClickNext = () => {
-        navigate('/finish-screen')
-    }
+    const [modalsVisibility, setModalsVisibility] = useState({
+        modal1: false,
+        modal2: false,
+        modal3: false,
+    });
+
+    const toggleModal = (modalName) => {
+        setModalsVisibility((prevVisibility) => ({
+            ...prevVisibility,
+            [modalName]: !prevVisibility[modalName],
+        }));
+    };
 
     const [clienteData, setClienteData] = useState({
         info1: '',
         info2: '',
         info3: '',
+        info4: '',
+        info5: '',
+        info6: '',
+        info7: '',
+        info8: '',
+        info9: ''
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setClienteData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
+    const handleChange = (event, fieldName) => {
+        const newValue = event.target.value;
+        setClienteData((prevData) => {
+            const newData = {
+                ...prevData,
+                [fieldName]: newValue,
+            };
+            localStorage.setItem('clienteData', JSON.stringify(newData));
+            return newData;
+        });
+    };
+    useEffect(() => {
+        if (location.state && location.state.clienteData) {
+            setClienteData(location.state.clienteData);
+        }
+    }, [location.state, navigate]);
+
+    useEffect(() => {
+        if (responseFromChatGPT !== null) {
+            const requestData = clienteData;
+            console.log("Response do Chat GPT na navegação:", responseFromChatGPT);
+            localStorage.clear();
+            navigate('/finish-screen', { state: { clienteData: requestData, responseFromChatGPT } });
+        }
+
+    }, [responseFromChatGPT, clienteData]);
+
+    const handleRequestChatGPT = async () => {
+        const mensagem = JSON.stringify(clienteData)
+        try {
+            const response = await userService.RequestChatGPT(mensagem);
+            alert('Requisição realizada com sucesso');
+            console.log("pergunta ao chat: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX " + JSON.stringify(mensagem))
+            setResponseFromChatGPT(response); // Atualiza o estado com o response do ChatGPT
+        } catch (error) {
+            alert('Request error');
+            console.error('Erro no request', error);
+        }
     };
 
-    const [modal1Visible, setModal1Visible] = useState(false);
-
-    const toggleModal1 = () => {
-        setModal1Visible(!modal1Visible);
-    };
-
-    const [modal2Visible, setModal2Visible] = useState(false);
-
-    const toggleModal2 = () => {
-        setModal2Visible(!modal2Visible);
-    };
-
-    const [modal3Visible, setModal3Visible] = useState(false);
-
-    const toggleModal3 = () => {
-        setModal3Visible(!modal3Visible);
-    };
-
+    
     return (
         <div className="container-navbar">
             <Navbar />
@@ -66,13 +101,13 @@ const GiftSuggestionScreen3 = () => {
                                 <img
                                     src={info}
                                     className="info-icon1"
-                                    onClick={toggleModal1}
+                                    onClick={() => toggleModal('modal1')}
                                 />
-                                {modal1Visible && (
+                                {modalsVisibility.modal1 && (
                                     <div className="modal">
                                         <div className="modal-content">
                                             <p>Seu texto estático aqui</p>
-                                            <button onClick={toggleModal1} className="close-button">
+                                            <button onClick={() => toggleModal('modal1')} className="close-button">
                                                 Fechar
                                             </button>
                                         </div>
@@ -83,7 +118,8 @@ const GiftSuggestionScreen3 = () => {
                             <textarea
                                 className="input-style"
                                 type="campo"
-                                onChange={handleChange}
+                                onChange={(e) => handleChange(e, 'info7')}
+                                value={clienteData.info7}
                             />
                         </div>
                     </div>
@@ -96,13 +132,13 @@ const GiftSuggestionScreen3 = () => {
                                 <img
                                     src={info}
                                     className="info-icon2"
-                                    onClick={toggleModal2}
+                                    onClick={() => toggleModal('modal2')}
                                 />
-                                {modal2Visible && (
+                                {modalsVisibility.modal2 && (
                                     <div className="modal">
                                         <div className="modal-content">
                                             <p>Seu texto estático aqui</p>
-                                            <button onClick={toggleModal2} className="close-button">
+                                            <button onClick={() => toggleModal('modal2')} className="close-button">
                                                 Fechar
                                             </button>
                                         </div>
@@ -112,7 +148,9 @@ const GiftSuggestionScreen3 = () => {
                             <p className="title-input">Tendências e novidades</p>
                             <textarea
                                 className="input-style"
-                                onChange={handleChange} />
+                                onChange={(e) => handleChange(e, 'info8')}
+                                value={clienteData.info8}
+                            />
                         </div>
                     </div>
 
@@ -124,13 +162,13 @@ const GiftSuggestionScreen3 = () => {
                                 <img
                                     src={info}
                                     className="info-icon3"
-                                    onClick={toggleModal3}
+                                    onClick={() => toggleModal('modal3')}
                                 />
-                                {modal3Visible && (
+                                {modalsVisibility.modal3 && (
                                     <div className="modal">
                                         <div className="modal-content">
                                             <p>Seu texto estático aqui</p>
-                                            <button onClick={toggleModal3} className="close-button">
+                                            <button onClick={() => toggleModal('modal3')} className="close-button">
                                                 Fechar
                                             </button>
                                         </div>
@@ -142,7 +180,9 @@ const GiftSuggestionScreen3 = () => {
                                 width={500}
                                 height={250}
                                 className="input-style"
-                                onChange={handleChange} />
+                                onChange={(e) => handleChange(e, 'info9')}
+                                value={clienteData.info9}
+                            />
                         </div>
                     </div>
                 </div>
@@ -153,7 +193,7 @@ const GiftSuggestionScreen3 = () => {
                 </div>
 
                 <div className="button-next">
-                    <Button label="Próximo" onClick={handleClickNext} />
+                    <Button label="Finalizar!" onClick={handleRequestChatGPT} />
                 </div>
             </div>
         </div>
