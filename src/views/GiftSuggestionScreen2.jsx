@@ -39,6 +39,7 @@ const GiftSuggestionScreen2 = () => {
     };
 
     const [clienteData, setClienteData] = useState({
+        info0: 'Me dê 10 sugestões de presentes baseada nas seguintes características. Irei fornecer especificações com as seguintes características respectivamente: Idade e fase da vida, Interesses e Hobbies, Personalidade, Ocasião, Relação com a pessoa, Memórias compartilhadas, Desejos, Tendências e novidades do momento, e Orçamento que é uma base.',
         info1: '',
         info2: '',
         info3: '',
@@ -58,16 +59,12 @@ const GiftSuggestionScreen2 = () => {
                 ...prevData,
                 [fieldName]: newValue,
             };
-
-            // Atualiza o localStorage com os dados mais recentes
             localStorage.setItem('clienteData', JSON.stringify(newData));
-
             return newData;
         });
     };
 
     useEffect(() => {
-        // Verifica se existem dados no estado da localização
         if (location.state && location.state.clienteData) {
             setClienteData(location.state.clienteData);
         }

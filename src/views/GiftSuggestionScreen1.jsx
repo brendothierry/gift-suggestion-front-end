@@ -57,10 +57,7 @@ const GiftSuggestionScreen1 = () => {
                 ...prevData,
                 [fieldName]: newValue,
             };
-
-            // Atualiza o localStorage com os dados mais recentes
             localStorage.setItem('clienteData', JSON.stringify(newData));
-
             return newData;
         });
     };

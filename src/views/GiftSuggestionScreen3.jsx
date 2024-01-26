@@ -15,18 +15,13 @@ const GiftSuggestionScreen3 = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const [responseFromChatGPT, setResponseFromChatGPT] = useState(null);
+
 
 
     const handleClickBack = () => {
         navigate('/screen2', { state: { clienteData } })
     }
-
-    const handleClickNext = () => {
-        const requestData = clienteData;
-        localStorage.clear();
-        navigate('/finish-screen')
-    }
-
 
     const [modalsVisibility, setModalsVisibility] = useState({
         modal1: false,
@@ -60,34 +55,40 @@ const GiftSuggestionScreen3 = () => {
                 ...prevData,
                 [fieldName]: newValue,
             };
-
-            // Atualiza o localStorage com os dados mais recentes
             localStorage.setItem('clienteData', JSON.stringify(newData));
-
             return newData;
         });
     };
-
     useEffect(() => {
-        // Verifica se existem dados no estado da localização
         if (location.state && location.state.clienteData) {
             setClienteData(location.state.clienteData);
         }
     }, [location.state, navigate]);
+
+    useEffect(() => {
+        if (responseFromChatGPT !== null) {
+            const requestData = clienteData;
+            console.log("Response do Chat GPT na navegação:", responseFromChatGPT);
+            localStorage.clear();
+            navigate('/finish-screen', { state: { clienteData: requestData, responseFromChatGPT } });
+        }
+
+    }, [responseFromChatGPT, clienteData]);
 
     const handleRequestChatGPT = async () => {
         const mensagem = JSON.stringify(clienteData)
         try {
             const response = await userService.RequestChatGPT(mensagem);
             alert('Requisição realizada com sucesso');
-            console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:" + JSON.stringify(response))
-            handleClickNext();
+            console.log("pergunta ao chat: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX " + JSON.stringify(mensagem))
+            setResponseFromChatGPT(response); // Atualiza o estado com o response do ChatGPT
         } catch (error) {
             alert('Request error');
             console.error('Erro no request', error);
         }
     };
 
+    
     return (
         <div className="container-navbar">
             <Navbar />
@@ -192,7 +193,7 @@ const GiftSuggestionScreen3 = () => {
                 </div>
 
                 <div className="button-next">
-                    <Button label="Próximo" onClick={handleRequestChatGPT} />
+                    <Button label="Finalizar!" onClick={handleRequestChatGPT} />
                 </div>
             </div>
         </div>
