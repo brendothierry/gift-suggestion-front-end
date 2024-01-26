@@ -68,9 +68,13 @@ const GiftSuggestionScreen3 = () => {
     useEffect(() => {
         if (responseFromChatGPT !== null) {
             const requestData = clienteData;
-            console.log("Response do Chat GPT na navegação:", responseFromChatGPT);
             localStorage.clear();
-            navigate('/finish-screen', { state: { clienteData: requestData, responseFromChatGPT } });
+            if (clienteData.info7 != '' && clienteData.info8 != '' && clienteData.info9 != '') {
+                alert('Requisição realizada com sucesso');
+                navigate('/finish-screen', { state: { clienteData: requestData, responseFromChatGPT } });
+            } else {
+                alert('Preencher todos os campos');
+            }
         }
 
     }, [responseFromChatGPT, clienteData]);
@@ -78,17 +82,20 @@ const GiftSuggestionScreen3 = () => {
     const handleRequestChatGPT = async () => {
         const mensagem = JSON.stringify(clienteData)
         try {
-            const response = await userService.RequestChatGPT(mensagem);
-            alert('Requisição realizada com sucesso');
-            console.log("pergunta ao chat: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX " + JSON.stringify(mensagem))
-            setResponseFromChatGPT(response); // Atualiza o estado com o response do ChatGPT
+            if (clienteData.info7 != '' && clienteData.info8 != '' && clienteData.info9 != '') {
+                const response = await userService.RequestChatGPT(mensagem);
+                setResponseFromChatGPT(response); // Atualiza o estado com o response do ChatGPT
+                alert('Requisição realizada com sucesso');
+            } else {
+                alert('Preencher todos os campos');
+            }
         } catch (error) {
             alert('Request error');
             console.error('Erro no request', error);
         }
     };
 
-    
+
     return (
         <div className="container-navbar">
             <Navbar />
