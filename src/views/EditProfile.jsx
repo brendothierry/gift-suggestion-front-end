@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
-import './Editprofile.css'
+import './EditProfile.css'
 import { useNavigate } from 'react-router-dom';
 
 
