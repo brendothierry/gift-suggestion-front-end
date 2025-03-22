@@ -19,7 +19,11 @@ const GiftSuggestionScreen1 = () => {
     }
 
     const handleClickNext = () => {
-        navigate('/screen2', { state: { clienteData } })
+        if(clienteData.info1 != '' && clienteData.info2 != '' && clienteData.info3 != '') {
+            navigate('/screen2', { state: { clienteData } })  
+        }else{
+            alert('Preencher todos os campos');
+        }
     }
 
 

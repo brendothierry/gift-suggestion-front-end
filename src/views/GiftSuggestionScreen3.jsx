@@ -9,13 +9,14 @@ import infoModel8 from '../Images/gs-info-model8.svg';
 import infoModel9 from '../Images/gs-info-model9.svg';
 import info from '../Images/info-circle.svg';
 import userService from '../services/userService';
+import { sendMessageToLlama  } from '../services/userService';
 
 
 const GiftSuggestionScreen3 = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const [responseFromChatGPT, setResponseFromChatGPT] = useState(null);
+    const [responseFromLlama, setResponseFromLlama] = useState(null);
 
 
 
@@ -66,29 +67,36 @@ const GiftSuggestionScreen3 = () => {
     }, [location.state, navigate]);
 
     useEffect(() => {
-        if (responseFromChatGPT !== null) {
-            const requestData = clienteData;
-            console.log("Response do Chat GPT na navegação:", responseFromChatGPT);
-            localStorage.clear();
-            navigate('/finish-screen', { state: { clienteData: requestData, responseFromChatGPT } });
-        }
-
-    }, [responseFromChatGPT, clienteData]);
-
-    const handleRequestChatGPT = async () => {
-        const mensagem = JSON.stringify(clienteData)
-        try {
-            const response = await userService.RequestChatGPT(mensagem);
+        if (responseFromLlama !== null) {
+          const requestData = clienteData;
+          localStorage.clear();
+          if (clienteData.info7 !== '' && clienteData.info8 !== '' && clienteData.info9 !== '') {
             alert('Requisição realizada com sucesso');
-            console.log("pergunta ao chat: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX " + JSON.stringify(mensagem))
-            setResponseFromChatGPT(response); // Atualiza o estado com o response do ChatGPT
-        } catch (error) {
-            alert('Request error');
-            console.error('Erro no request', error);
+            navigate('/finish-screen', { state: { clienteData: requestData, responseFromLlama } });
+            console.log('XXXXXXXXX:', clienteData);
+          } else {
+            alert('Preencher todos os campos');
+          }
         }
-    };
-
+      }, [responseFromLlama, clienteData]);
     
+
+      const handleRequestLlama = async () => {
+        const mensagem = JSON.stringify(clienteData);
+        try {
+          if (clienteData.info7 !== '' && clienteData.info8 !== '' && clienteData.info9 !== '') {
+            const response = await sendMessageToLlama(mensagem);
+            setResponseFromLlama(response);
+            alert('Requisição realizada com sucesso');
+          } else {
+            alert('Preencher todos os campos');
+          }
+        } catch (error) {
+          alert('Request error');
+          console.error('Erro no request', error);
+        }
+      };
+
     return (
         <div className="container-navbar">
             <Navbar />
@@ -193,7 +201,7 @@ const GiftSuggestionScreen3 = () => {
                 </div>
 
                 <div className="button-next">
-                    <Button label="Finalizar!" onClick={handleRequestChatGPT} />
+                    <Button label="Finalizar!" onClick={handleRequestLlama} />
                 </div>
             </div>
         </div>

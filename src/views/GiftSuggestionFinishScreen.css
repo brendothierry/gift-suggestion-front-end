@@ -84,17 +84,47 @@ body {
     flex-direction: column;
     padding: 20px;
     max-height: 70vh; /* Defina uma altura máxima para o contêiner */
-    overflow-y: auto; /* Adiciona uma barra de ro */
+    overflow-y: auto; /* Adiciona uma barra de rolagem */
 }
 
-.gpt-answer1, .gpt-answer2, .gpt-answer3, .gpt-answer4, .gpt-answer5, .gpt-answer6, .gpt-answer7, .gpt-answer8, .gpt-answer9, .gpt-answer10 {
+/* Ajuste da formatação de cada sugestão */
+.suggestion-card {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Flex para número e texto ficarem lado a lado */
+.suggestion {
+    display: flex;  /* Alinha número e texto na mesma linha */
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 10px;
+}
+
+.suggestion-index {
+    font-weight: bold;
     font-family: 'Ruda', sans-serif;
-    color: #511C74;
     font-size: 18px;
-    white-space: pre-wrap; /* Permite a quebra de linha */
-    margin-bottom: 20px;
+    color: #511C74;  /* Aplica a cor roxa */
+    margin-right: 8px;  /* Espaço entre o número e o texto */
 }
 
-.answer1, .answer2 {
-    margin-bottom: 20px;
+.suggestion-content {
+    font-family: 'Ruda', sans-serif;
+    font-size: 18px;
+    color: #511C74;  /* Aplica a cor roxa */
+    word-wrap: break-word;  /* Garante que o texto não ultrapasse os limites */
+}
+
+/* Estilo para os botões */
+.button-more-suggestions {
+    border-radius: 3%;
+}
+
+.button-container {
+    display: flex;
+    position: absolute;
+    right: 90px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5%;
 }

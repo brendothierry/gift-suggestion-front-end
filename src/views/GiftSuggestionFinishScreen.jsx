@@ -15,16 +15,17 @@ const GiftSuggestionFinishScreen = () => {
     const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
-        const responseFromChatGPT = location.state && location.state.responseFromChatGPT;
-        if (responseFromChatGPT) {
-            const choices = responseFromChatGPT.choices || [];
-            const suggestionsArray = choices.map((choice, index) => ({
-                index: index + 1,
-                content: choice.message.content
-            }));
-            setSuggestions(suggestionsArray);
+        const responseFromLLaMA = location.state && location.state.responseFromLlama;
+
+        if (responseFromLLaMA) {
+            const formattedSuggestions = responseFromLLaMA
+                .split('\n')
+                .filter(line => line.trim() !== '' && /^\d+\./.test(line))  // Regex para números seguidos de ponto
+                .map(line => line.replace(/^\d+\.\s*/, ''));  // Remove o número e o ponto
+            setSuggestions(formattedSuggestions);
         }
-    }, [location.state, location.state.responseFromChatGPT]);
+    }, [location.state, location.state.responseFromLlama]);
+
 
     return (
         <div className='container-navbar'>
@@ -62,9 +63,12 @@ const GiftSuggestionFinishScreen = () => {
                 </div>
                 <div className='container-results'>
                     <div className='side-panel'>
-                        {suggestions.map((suggestion) => (
-                            <div className='gpt-answer1'>
-                                <text>{suggestion.index}: {suggestion.content}</text>
+                        {suggestions.map((suggestion, index) => (
+                            <div key={index} className='suggestion-card'>
+                                <div className='suggestion'>
+                                    <span className='suggestion-index'>{index + 1}:</span>
+                                    <span className='suggestion-content'>{suggestion}</span>
+                                </div>
                             </div>
                         ))}
                     </div>
