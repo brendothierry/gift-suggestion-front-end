@@ -91,7 +91,7 @@ const GiftSuggestionScreen1 = () => {
                                 {modalsVisibility.modal1 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Indique a idade da pessoa e o momento atual que ela vive (ex.: adolescente, adulto jovem, aposentado).</p>
                                             <button onClick={() => toggleModal('modal1')} className="close-button">
                                                 Fechar
                                             </button>
@@ -122,7 +122,7 @@ const GiftSuggestionScreen1 = () => {
                                 {modalsVisibility.modal2 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Liste atividades ou assuntos que a pessoa gosta, como esportes, música, leitura ou tecnologia.</p>
                                             <button onClick={() => toggleModal('modal2')} className="close-button">
                                                 Fechar
                                             </button>
@@ -152,7 +152,7 @@ const GiftSuggestionScreen1 = () => {
                                 {modalsVisibility.modal3 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Descreva traços marcantes, como ser extrovertida, reservada, aventureira ou criativa.</p>
                                             <button onClick={() => toggleModal('modal3')} className="close-button">
                                                 Fechar
                                             </button>

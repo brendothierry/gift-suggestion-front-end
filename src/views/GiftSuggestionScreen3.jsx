@@ -3,13 +3,15 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import './GiftSuggestionScreen1.css';
+import './GiftSuggestionScreen3.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import infoModel7 from '../Images/gs-info-model7.svg';
 import infoModel8 from '../Images/gs-info-model8.svg';
 import infoModel9 from '../Images/gs-info-model9.svg';
 import info from '../Images/info-circle.svg';
+import loading from '../Images/loading.gif.gif';
 import userService from '../services/userService';
-import { sendMessageToLlama  } from '../services/userService';
+import { sendMessageToLlama } from '../services/userService';
 
 
 const GiftSuggestionScreen3 = () => {
@@ -17,7 +19,7 @@ const GiftSuggestionScreen3 = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [responseFromLlama, setResponseFromLlama] = useState(null);
-
+    const [isLoading, setIsLoading] = useState(false); // Estado para controlar o loading
 
 
     const handleClickBack = () => {
@@ -68,34 +70,45 @@ const GiftSuggestionScreen3 = () => {
 
     useEffect(() => {
         if (responseFromLlama !== null) {
-          const requestData = clienteData;
-          localStorage.clear();
-          if (clienteData.info7 !== '' && clienteData.info8 !== '' && clienteData.info9 !== '') {
-            alert('Requisição realizada com sucesso');
-            navigate('/finish-screen', { state: { clienteData: requestData, responseFromLlama } });
-            console.log('XXXXXXXXX:', clienteData);
-          } else {
-            alert('Preencher todos os campos');
-          }
+            const requestData = clienteData;
+            localStorage.clear();
+            if (clienteData.info7 !== '' && clienteData.info8 !== '' && clienteData.info9 !== '') {
+                navigate('/finish-screen', { state: { clienteData: requestData, responseFromLlama } });
+            } else {
+                alert('Preencher todos os campos');
+            }
         }
-      }, [responseFromLlama, clienteData]);
-    
+    }, [responseFromLlama, clienteData, navigate]);
 
-      const handleRequestLlama = async () => {
+    const handleRequestLlama = async () => {
         const mensagem = JSON.stringify(clienteData);
         try {
-          if (clienteData.info7 !== '' && clienteData.info8 !== '' && clienteData.info9 !== '') {
-            const response = await sendMessageToLlama(mensagem);
-            setResponseFromLlama(response);
-            alert('Requisição realizada com sucesso');
-          } else {
-            alert('Preencher todos os campos');
-          }
+            if (clienteData.info7 !== '' && clienteData.info8 !== '' && clienteData.info9 !== '') {
+                setIsLoading(true);
+                const response = await sendMessageToLlama(mensagem);
+                setResponseFromLlama(response);
+                alert('Perfeito!! Ficou pronto.');
+            } else {
+                alert('Preencher todos os campos');
+            }
         } catch (error) {
-          alert('Request error');
-          console.error('Erro no request', error);
+            alert('Request error');
+            console.error('Erro no request', error);
+        } finally {
+
+            setIsLoading(false);
         }
-      };
+    };
+
+    if (isLoading) {
+        return (
+            <div className="loading-container">
+                <img src={loading} alt="Loading..." className="loading-gif" />
+                <p className="loading-text">Aguarde! Estamos processando uma sugestão incrível pra você e pode levar até 2 minutos...</p>
+                <p className="loading-text2">Mas é o que dizem, a pressa é inimiga da...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="container-navbar">
@@ -114,7 +127,7 @@ const GiftSuggestionScreen3 = () => {
                                 {modalsVisibility.modal1 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Identifique algo que a pessoa gostaria de ter ou realizar.</p>
                                             <button onClick={() => toggleModal('modal1')} className="close-button">
                                                 Fechar
                                             </button>
@@ -145,7 +158,7 @@ const GiftSuggestionScreen3 = () => {
                                 {modalsVisibility.modal2 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Mencione modas ou tecnologias recentes que possam interessá-la.</p>
                                             <button onClick={() => toggleModal('modal2')} className="close-button">
                                                 Fechar
                                             </button>
@@ -175,7 +188,7 @@ const GiftSuggestionScreen3 = () => {
                                 {modalsVisibility.modal3 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Defina o valor máximo que deseja gastar com o presente.</p>
                                             <button onClick={() => toggleModal('modal3')} className="close-button">
                                                 Fechar
                                             </button>

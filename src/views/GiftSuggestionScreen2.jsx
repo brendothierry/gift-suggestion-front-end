@@ -92,7 +92,7 @@ const GiftSuggestionScreen2 = () => {
                                 {modalsVisibility.modal1 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Informe o evento que motivou o presente, como aniversário, formatura ou casamento.</p>
                                             <button onClick={() => toggleModal('modal1')} className="close-button">
                                                 Fechar
                                             </button>
@@ -123,7 +123,7 @@ const GiftSuggestionScreen2 = () => {
                                 {modalsVisibility.modal2 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Explique o vínculo entre vocês — amigo, parente, colega de trabalho, parceiro(a).</p>
                                             <button onClick={() => toggleModal('modal2')} className="close-button">
                                                 Fechar
                                             </button>
@@ -153,7 +153,7 @@ const GiftSuggestionScreen2 = () => {
                                 {modalsVisibility.modal3 && (
                                     <div className="modal">
                                         <div className="modal-content">
-                                            <p>Seu texto estático aqui</p>
+                                            <p>Cite momentos especiais que viveram juntos, como viagens, eventos ou conquistas.</p>
                                             <button onClick={() => toggleModal('modal3')} className="close-button">
                                                 Fechar
                                             </button>

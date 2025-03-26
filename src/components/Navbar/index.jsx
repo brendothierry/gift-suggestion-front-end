@@ -2,7 +2,6 @@
 import React from 'react';
 import LogoImagem from '../../Images/logo.png';
 import './styles.css';
-import IconUser from '../../Images/IconUser.svg'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -39,11 +38,6 @@ const Navbar = ({ showButton, onClick }) => {
         )}
         {showButton && (
           <button className='sobre-nos' onClick={handleClickAboutUs}> Sobre nós </button>
-        )}
-        {showButton && (
-          <button className='icone' onClick={handleClickEditProfile}>
-            <img src={IconUser} alt='icone' />
-          </button>
         )}
       </div>
     </nav>

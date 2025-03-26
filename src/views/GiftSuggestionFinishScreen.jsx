@@ -4,6 +4,11 @@ import Navbar from '../components/Navbar';
 import './GiftSuggestionFinishScreen.css';
 import Button from '../components/Button';
 import { useNavigate, useLocation } from 'react-router';
+import loading from '../Images/loading.gif.gif';
+import { sendMessageToLlama } from '../services/userService';
+import './GiftSuggestionScreen3.css';
+
+
 
 const GiftSuggestionFinishScreen = () => {
 
@@ -13,6 +18,8 @@ const GiftSuggestionFinishScreen = () => {
         navigate('/home')
     }
     const [suggestions, setSuggestions] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [clienteData, setClienteData] = useState(location.state?.clienteData || {});
 
     useEffect(() => {
         const responseFromLLaMA = location.state && location.state.responseFromLlama;
@@ -25,6 +32,35 @@ const GiftSuggestionFinishScreen = () => {
             setSuggestions(formattedSuggestions);
         }
     }, [location.state, location.state.responseFromLlama]);
+
+
+    const handleMoreSuggestions = async () => {
+        setIsLoading(true);
+        try {
+            const mensagem = JSON.stringify(clienteData);
+            const response = await sendMessageToLlama(mensagem);
+            const newSuggestions = response
+                .split('\n')
+                .filter(line => line.trim() !== '' && /^\d+\./.test(line))
+                .map(line => line.replace(/^\d+\.\s*/, ''));
+            setSuggestions(prevSuggestions => [...prevSuggestions, ...newSuggestions]);
+        } catch (error) {
+            alert('Erro ao buscar mais sugestões');
+            console.error('Erro no request', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    if (isLoading) {
+        return (
+            <div className="loading-container">
+                <img src={loading} alt="Loading..." className="loading-gif" />
+                <p className="loading-text">Pelo visto você ainda está indeciso...</p>
+                <p className="loading-text3">Lembre-se, o presente é só um gesto, mas o que realmente importa é o carinho e a intenção por trás dele. <br></br> Expressar esse sentimento torna qualquer presente especial.</p>
+            </div>
+        );
+    }
 
 
     return (
@@ -49,7 +85,8 @@ const GiftSuggestionFinishScreen = () => {
                             className="button-more-suggestions"
                             label="Me dê mais 10 sugestões!"
                             width={300}
-                            height={55}>
+                            height={55}
+                            onClick={handleMoreSuggestions}>
                         </Button>
                         <Button
                             className="button-finish"
